@@ -830,7 +830,7 @@ namespace Game
 
         public override void Initialize()
         {
-            Console.WriteLine("initialize");
+            Console.WriteLine("initialize");Console.Write(World.Agents[this.MySide].Name());
             if (World.Agents[this.MySide].Name() == "Blue")
             {
                 side = 1;
@@ -845,6 +845,17 @@ namespace Game
 
         public override void Decide()
         {
+            Console.Write(World.Agents[this.MySide].Name());
+
+            if (World.Agents[this.MySide].Name() == "Blue")
+            {
+                side = 1;
+
+            }
+            else
+            {
+                side = 0;
+            }
             wallBreakerCool = World.Agents[this.MySide].WallBreakerCooldown ?? default(int);
             wallBreakerleft = World.Agents[this.MySide].WallBreakerRemTime ?? default(int);
             health = World.Agents[this.MySide].Health ?? default(int);
