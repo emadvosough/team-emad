@@ -68,7 +68,7 @@ namespace Game
             }
             else
             {
-                cycleaPre = 6;
+                cycleaPre = 5;
             }
 
 
