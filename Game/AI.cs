@@ -65,11 +65,11 @@ namespace Game
             int cycleaPre;
             if (CurrentCycle < 30)
             {
-                cycleaPre = ((CurrentCycle % 9) / 3) + 3;
+                cycleaPre = 4;
             }
             else
             {
-                cycleaPre = 6;
+                cycleaPre = 5;
             }
 
 
