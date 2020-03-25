@@ -17,22 +17,22 @@ namespace Game
         {
             Int64 max = arr[0];
             Int64 IsSame = arr[0];//if all elements are same 
-            
+
             foreach (Int64 i in arr)
             {
-                
+
                 if (i > max)
                 {
                     max = i;
                 }
             }
-            
+
             for (int i = 0; i < 4; ++i)
             {
                 if (arr[i] == max)
                 {
                     direct = i;
-                    break;
+
                 }
             }
 
@@ -65,7 +65,7 @@ namespace Game
             int cycleaPre;
             if (CurrentCycle < 30)
             {
-                cycleaPre = ((CurrentCycle % 6) / 2 ) + 3;
+                cycleaPre = ((CurrentCycle % 9) / 3) + 3;
             }
             else
             {
@@ -84,7 +84,7 @@ namespace Game
                         {
                             if (World.Board[Y][X + 1] == (ECell)0)//empty
                             {
-                                direct += 6;
+                                direct += 8;
 
 
                             }
@@ -102,7 +102,7 @@ namespace Game
                             }
                             else if (World.Board[Y][X + 1] == (ECell)3)//yellowwall
                             {
-                                direct -= 4;
+                                direct -= 3;
 
                             }
 
@@ -112,7 +112,7 @@ namespace Game
                         {
                             if (World.Board[Y][X - 1] == (ECell)0)//empty
                             {
-                                direct += 5;
+                                direct += 8;
 
 
                             }
@@ -140,7 +140,7 @@ namespace Game
                         {
                             if (World.Board[Y - 1][X] == (ECell)0)//empty
                             {
-                                direct += 6;
+                                direct += 8;
 
 
                             }
@@ -172,7 +172,7 @@ namespace Game
                         {
                             if (World.Board[Y][X + 1] == (ECell)0)//empty
                             {
-                                direct += 5;
+                                direct += 8;
 
 
                             }
@@ -200,7 +200,7 @@ namespace Game
                         {
                             if (World.Board[Y + 1][X] == (ECell)0) //empty
                             {
-                                direct += 5;
+                                direct += 8;
 
 
                             }
@@ -218,7 +218,7 @@ namespace Game
                             }
                             else if (World.Board[Y + 1][X] == (ECell)3)//yellowwall
                             {
-                                direct -= 5;
+                                direct -= 4;
 
                             }
                         }
@@ -227,7 +227,7 @@ namespace Game
                         {
                             if (World.Board[Y - 1][X] == (ECell)0)//empty
                             {
-                                direct += 5;
+                                direct += 8;
 
 
                             }
@@ -258,7 +258,7 @@ namespace Game
                         {
                             if (World.Board[Y + 1][X] == (ECell)0)//empty
                             {
-                                direct += 5;
+                                direct += 8;
 
 
                             }
@@ -266,11 +266,11 @@ namespace Game
                             {
                                 if (wallBreakerleft - movement > 1 || (wallBreakerCool - movement <= 0 && wallBreakerleft == 0))
                                 {
-                                    direct += 4;
+                                    direct += 3;
                                 }
                                 else
                                 {
-                                    direct = direct - 7;
+                                    direct = direct - 6;
                                 }
 
                             }
@@ -286,7 +286,7 @@ namespace Game
                         {
                             if (World.Board[Y][X - 1] == (ECell)0)//empty
                             {
-                                direct += 5;
+                                direct += 8;
 
 
                             }
@@ -313,7 +313,7 @@ namespace Game
                         {
                             if (World.Board[Y][X + 1] == (ECell)0)//empty
                             {
-                                direct += 5;
+                                direct += 8;
 
 
                             }
@@ -344,7 +344,7 @@ namespace Game
                         {
                             if (World.Board[Y + 1][X] == (ECell)0)//empty
                             {
-                                direct += 4;
+                                direct += 8;
 
 
                             }
@@ -352,7 +352,7 @@ namespace Game
                             {
                                 if (wallBreakerleft - movement > 1 || (wallBreakerCool - movement <= 0 && wallBreakerleft == 0))
                                 {
-                                    direct += 3;
+                                    direct += 4;
                                 }
                                 else
                                 {
@@ -372,7 +372,7 @@ namespace Game
                         {
                             if (World.Board[Y][X - 1] == (ECell)0)//empty
                             {
-                                direct +=5;
+                                direct += 8;
 
 
                             }
@@ -390,7 +390,7 @@ namespace Game
                             }
                             else if (World.Board[Y][X - 1] == (ECell)3)//yellowwall
                             {
-                                direct -= 4;
+                                direct -= 5;
 
                             }
                         }
@@ -399,7 +399,7 @@ namespace Game
                         {
                             if (World.Board[Y - 1][X] == (ECell)0)//empty
                             {
-                                direct += 5;
+                                direct += 8;
 
 
                             }
@@ -417,7 +417,7 @@ namespace Game
                             }
                             else if (World.Board[Y - 1][X] == (ECell)3)//yellowwall
                             {
-                                direct -= 4;
+                                direct -= 5;
 
                             }
 
@@ -434,7 +434,7 @@ namespace Game
                         {
                             if (World.Board[Y][X + 1] == (ECell)0)//empty
                             {
-                                direct += 5;
+                                direct += 8;
 
 
                             }
@@ -462,7 +462,7 @@ namespace Game
                         {
                             if (World.Board[Y][X - 1] == (ECell)0)//empty
                             {
-                                direct += 5;
+                                direct += 8;
 
 
                             }
@@ -489,7 +489,7 @@ namespace Game
                         {
                             if (World.Board[Y - 1][X] == (ECell)0)//empty
                             {
-                                direct += 5;
+                                direct += 8;
 
 
                             }
@@ -520,7 +520,7 @@ namespace Game
                         {
                             if (World.Board[Y][X + 1] == (ECell)0)//empty
                             {
-                                direct += 5;
+                                direct += 8;
 
 
                             }
@@ -548,7 +548,7 @@ namespace Game
                         {
                             if (World.Board[Y + 1][X] == (ECell)0) //empty
                             {
-                                direct += 5;
+                                direct += 7;
 
 
                             }
@@ -576,7 +576,7 @@ namespace Game
                         {
                             if (World.Board[Y - 1][X] == (ECell)0)//empty
                             {
-                                direct += 5;
+                                direct += 7;
 
 
                             }
@@ -584,7 +584,7 @@ namespace Game
                             {
                                 if (wallBreakerleft - movement > 1 || (wallBreakerCool - movement <= 0 && wallBreakerleft == 0))
                                 {
-                                    direct += 3;
+                                    direct += 4;
                                 }
                                 else
                                 {
@@ -607,7 +607,7 @@ namespace Game
                         {
                             if (World.Board[Y + 1][X] == (ECell)0)//empty
                             {
-                                direct += 5;
+                                direct += 7;
 
 
                             }
@@ -635,7 +635,7 @@ namespace Game
                         {
                             if (World.Board[Y][X - 1] == (ECell)0)//empty
                             {
-                                direct += 5;
+                                direct += 7;
 
 
                             }
@@ -653,7 +653,7 @@ namespace Game
                             }
                             else if (World.Board[Y][X - 1] == (ECell)2)//blue wall
                             {
-                                direct -= 3;
+                                direct -= 4;
 
                             }
                         }
@@ -662,7 +662,7 @@ namespace Game
                         {
                             if (World.Board[Y][X + 1] == (ECell)0)//empty
                             {
-                                direct += 5;
+                                direct += 7;
 
 
                             }
@@ -693,13 +693,13 @@ namespace Game
                         {
                             if (World.Board[Y + 1][X] == (ECell)0)//empty
                             {
-                                direct += 5;
+                                direct += 7;
 
 
                             }
                             else if (World.Board[Y + 1][X] == (ECell)3)//yellowwall
                             {
-                                if (wallBreakerleft - movement > 1 || (wallBreakerCool - movement <= 0 && wallBreakerleft == 0))
+                                if (wallBreakerleft - movement > 1 || (wallBreakerCool - movement == 0 && wallBreakerleft == 0))
                                 {
                                     direct += 4;
                                 }
@@ -721,7 +721,7 @@ namespace Game
                         {
                             if (World.Board[Y][X - 1] == (ECell)0)//empty
                             {
-                                direct += 5;
+                                direct += 7;
 
 
                             }
@@ -733,7 +733,7 @@ namespace Game
                                 }
                                 else
                                 {
-                                    direct = direct -6;
+                                    direct = direct - 6;
                                 }
 
                             }
@@ -748,7 +748,7 @@ namespace Game
                         {
                             if (World.Board[Y - 1][X] == (ECell)0)//empty
                             {
-                                direct += 5;
+                                direct += 7;
 
 
                             }
@@ -907,6 +907,7 @@ namespace Game
                     way(ref help, movement, (EDirection)0, myAgentX, myAgentY - 1);
                 direct[0] += help;
                 help = 0;
+
                 if (World.Board[myAgentY][myAgentX - 1] != (ECell)1)
                     way(ref help, movement, (EDirection)3, myAgentX - 1, myAgentY);
                 direct[3] += help;
@@ -971,7 +972,7 @@ namespace Game
                     direct[3] += 20;
                 }
 
-                
+
 
 
             }
@@ -984,7 +985,7 @@ namespace Game
                     direct[1] += 20;
                 }
 
-                
+
 
             }
 
@@ -997,7 +998,7 @@ namespace Game
                     direct[0] += 20;
                 }
 
-                
+
             }
 
 
@@ -1010,12 +1011,12 @@ namespace Game
                     direct[2] += 20;
                 }
 
-                
+
             }
 
 
             path = 0;
-            
+
             Max a = new Max(direct, ref path);
             if (path == -1)//for the case of four zero 
             {
