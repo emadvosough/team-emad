@@ -5,7 +5,6 @@ using KoalaTeam.Chillin.Client;
 using KS;
 using KS.Commands;
 using KS.Models;
-
 using KSObject = KS.KSObject;
 
 namespace Game
@@ -830,8 +829,8 @@ namespace Game
 
         public override void Initialize()
         {
-            Console.WriteLine("initialize");Console.Write(World.Agents[this.MySide].Name());
-            if (World.Agents[this.MySide].Name() == "Blue")
+            Console.WriteLine("initialize");
+            if (this.MySide == "Blue")
             {
                 side = 1;
 
@@ -839,15 +838,15 @@ namespace Game
             else
             {
                 side = 0;
-            }
-
+            }Console.WriteLine(this.MySide);
+            
         }
 
         public override void Decide()
         {
-            Console.Write(World.Agents[this.MySide].Name());
+            Console.Write(this.MySide);
 
-            if (World.Agents[this.MySide].Name() == "Blue")
+            if (this.MySide == "Blue")
             {
                 side = 1;
 
