@@ -16,18 +16,17 @@ namespace Game
         public Max(Int64[] arr, ref int direct)//to choose the best way
         {
             Int64 max = arr[0];
+            Int64 IsSame = arr[0];//if all elements are same 
+            
             foreach (Int64 i in arr)
             {
+                
                 if (i > max)
                 {
                     max = i;
                 }
             }
-            if (max == 0)
-            {
-                direct = -1;
-                return;
-            }
+            
             for (int i = 0; i < 4; ++i)
             {
                 if (arr[i] == max)
@@ -66,11 +65,11 @@ namespace Game
             int cycleaPre;
             if (CurrentCycle < 30)
             {
-                cycleaPre = ((CurrentCycle % 9) / 3 ) + 1;
+                cycleaPre = ((CurrentCycle % 6) / 2 ) + 3;
             }
             else
             {
-                cycleaPre = 10;
+                cycleaPre = 6;
             }
 
 
@@ -85,7 +84,7 @@ namespace Game
                         {
                             if (World.Board[Y][X + 1] == (ECell)0)//empty
                             {
-                                direct += 5;
+                                direct += 6;
 
 
                             }
@@ -97,13 +96,13 @@ namespace Game
                                 }
                                 else
                                 {
-                                    direct -= 6;
+                                    direct -= 8;
                                 }
 
                             }
                             else if (World.Board[Y][X + 1] == (ECell)3)//yellowwall
                             {
-                                direct -= 3;
+                                direct -= 4;
 
                             }
 
@@ -125,13 +124,13 @@ namespace Game
                                 }
                                 else
                                 {
-                                    direct = direct - 6;
+                                    direct = direct - 8;
                                 }
 
                             }
                             else if (World.Board[Y][X - 1] == (ECell)3)//yellowwall
                             {
-                                direct -= 3;
+                                direct -= 5;
 
                             }
                         }
@@ -141,7 +140,7 @@ namespace Game
                         {
                             if (World.Board[Y - 1][X] == (ECell)0)//empty
                             {
-                                direct += 5;
+                                direct += 6;
 
 
                             }
@@ -149,17 +148,17 @@ namespace Game
                             {
                                 if (wallBreakerleft - movement > 1 || (wallBreakerCool - movement <= 0 && wallBreakerleft == 0))
                                 {
-                                    direct += 4;
+                                    direct += 5;
                                 }
                                 else
                                 {
-                                    direct = direct - 6;
+                                    direct = direct - 7;
                                 }
 
                             }
                             else if (World.Board[Y - 1][X] == (ECell)3)//yellowwall
                             {
-                                direct -= 3;
+                                direct -= 5;
 
                             }
 
@@ -185,13 +184,13 @@ namespace Game
                                 }
                                 else
                                 {
-                                    direct = direct - 6;
+                                    direct = direct - 7;
                                 }
 
                             }
                             else if (World.Board[Y][X + 1] == (ECell)3) //yellowwall
                             {
-                                direct -= 3;
+                                direct -= 4;
 
                             }
 
@@ -213,13 +212,13 @@ namespace Game
                                 }
                                 else
                                 {
-                                    direct = direct - 5;
+                                    direct = direct - 6;
                                 }
 
                             }
                             else if (World.Board[Y + 1][X] == (ECell)3)//yellowwall
                             {
-                                direct -= 3;
+                                direct -= 5;
 
                             }
                         }
@@ -240,13 +239,13 @@ namespace Game
                                 }
                                 else
                                 {
-                                    direct = direct - 5;
+                                    direct = direct - 6;
                                 }
 
                             }
                             else if (World.Board[Y - 1][X] == (ECell)3)//yellowwall
                             {
-                                direct -= 3;
+                                direct -= 4;
 
                             }
 
@@ -267,17 +266,17 @@ namespace Game
                             {
                                 if (wallBreakerleft - movement > 1 || (wallBreakerCool - movement <= 0 && wallBreakerleft == 0))
                                 {
-                                    direct += 3;
+                                    direct += 4;
                                 }
                                 else
                                 {
-                                    direct = direct - 5;
+                                    direct = direct - 7;
                                 }
 
                             }
                             else if (World.Board[Y + 1][X] == (ECell)3)//yellowwall
                             {
-                                direct -= 3;
+                                direct -= 4;
 
                             }
 
@@ -299,13 +298,13 @@ namespace Game
                                 }
                                 else
                                 {
-                                    direct = direct - 5;
+                                    direct = direct - 7;
                                 }
 
                             }
                             else if (World.Board[Y][X - 1] == (ECell)3)//yellowwall
                             {
-                                direct -= 3;
+                                direct -= 4;
 
                             }
                         }
@@ -326,13 +325,13 @@ namespace Game
                                 }
                                 else
                                 {
-                                    direct = direct - 5;
+                                    direct = direct - 7;
                                 }
 
                             }
                             else if (World.Board[Y][X + 1] == (ECell)3)//yellowwall
                             {
-                                direct -= 3;
+                                direct -= 4;
 
                             }
 
@@ -357,13 +356,13 @@ namespace Game
                                 }
                                 else
                                 {
-                                    direct = direct - 5;
+                                    direct = direct - 7;
                                 }
 
                             }
                             else if (World.Board[Y + 1][X] == (ECell)3)//yellowwall
                             {
-                                direct -= 3;
+                                direct -= 4;
 
                             }
 
@@ -373,7 +372,7 @@ namespace Game
                         {
                             if (World.Board[Y][X - 1] == (ECell)0)//empty
                             {
-                                direct += 4;
+                                direct +=5;
 
 
                             }
@@ -385,13 +384,13 @@ namespace Game
                                 }
                                 else
                                 {
-                                    direct = direct - 5;
+                                    direct = direct - 6;
                                 }
 
                             }
                             else if (World.Board[Y][X - 1] == (ECell)3)//yellowwall
                             {
-                                direct -= 3;
+                                direct -= 4;
 
                             }
                         }
@@ -400,7 +399,7 @@ namespace Game
                         {
                             if (World.Board[Y - 1][X] == (ECell)0)//empty
                             {
-                                direct += 4;
+                                direct += 5;
 
 
                             }
@@ -412,13 +411,13 @@ namespace Game
                                 }
                                 else
                                 {
-                                    direct = direct - 5;
+                                    direct = direct - 6;
                                 }
 
                             }
                             else if (World.Board[Y - 1][X] == (ECell)3)//yellowwall
                             {
-                                direct -= 3;
+                                direct -= 4;
 
                             }
 
@@ -435,7 +434,7 @@ namespace Game
                         {
                             if (World.Board[Y][X + 1] == (ECell)0)//empty
                             {
-                                direct += 4;
+                                direct += 5;
 
 
                             }
@@ -447,13 +446,13 @@ namespace Game
                                 }
                                 else
                                 {
-                                    direct = direct - 5;
+                                    direct = direct - 7;
                                 }
 
                             }
                             else if (World.Board[Y][X + 1] == (ECell)2)//blue wall
                             {
-                                direct -= 3;
+                                direct -= 4;
 
                             }
 
@@ -463,7 +462,7 @@ namespace Game
                         {
                             if (World.Board[Y][X - 1] == (ECell)0)//empty
                             {
-                                direct += 4;
+                                direct += 5;
 
 
                             }
@@ -475,13 +474,13 @@ namespace Game
                                 }
                                 else
                                 {
-                                    direct = direct - 5;
+                                    direct = direct - 7;
                                 }
 
                             }
                             else if (World.Board[Y][X - 1] == (ECell)2)//blue wall
                             {
-                                direct -= 3;
+                                direct -= 4;
 
                             }
                         }
@@ -490,7 +489,7 @@ namespace Game
                         {
                             if (World.Board[Y - 1][X] == (ECell)0)//empty
                             {
-                                direct += 4;
+                                direct += 5;
 
 
                             }
@@ -502,13 +501,13 @@ namespace Game
                                 }
                                 else
                                 {
-                                    direct = direct - 5;
+                                    direct = direct - 6;
                                 }
 
                             }
                             else if (World.Board[Y - 1][X] == (ECell)2)//blue wall
                             {
-                                direct -= 3;
+                                direct -= 4;
 
                             }
 
@@ -521,7 +520,7 @@ namespace Game
                         {
                             if (World.Board[Y][X + 1] == (ECell)0)//empty
                             {
-                                direct += 4;
+                                direct += 5;
 
 
                             }
@@ -533,13 +532,13 @@ namespace Game
                                 }
                                 else
                                 {
-                                    direct = direct - 5;
+                                    direct = direct - 6;
                                 }
 
                             }
                             else if (World.Board[Y][X + 1] == (ECell)2) //blue wall
                             {
-                                direct -= 3;
+                                direct -= 4;
 
                             }
 
@@ -549,7 +548,7 @@ namespace Game
                         {
                             if (World.Board[Y + 1][X] == (ECell)0) //empty
                             {
-                                direct += 4;
+                                direct += 5;
 
 
                             }
@@ -562,13 +561,13 @@ namespace Game
                                 }
                                 else
                                 {
-                                    direct = direct - 5;
+                                    direct = direct - 6;
                                 }
 
                             }
                             else if (World.Board[Y + 1][X] == (ECell)2)//blue wall
                             {
-                                direct -= 3;
+                                direct -= 4;
 
                             }
                         }
@@ -577,7 +576,7 @@ namespace Game
                         {
                             if (World.Board[Y - 1][X] == (ECell)0)//empty
                             {
-                                direct += 4;
+                                direct += 5;
 
 
                             }
@@ -589,13 +588,13 @@ namespace Game
                                 }
                                 else
                                 {
-                                    direct = direct - 5;
+                                    direct = direct - 7;
                                 }
 
                             }
                             else if (World.Board[Y - 1][X] == (ECell)2)//blue wall
                             {
-                                direct -= 3;
+                                direct -= 4;
 
                             }
 
@@ -608,7 +607,7 @@ namespace Game
                         {
                             if (World.Board[Y + 1][X] == (ECell)0)//empty
                             {
-                                direct += 4;
+                                direct += 5;
 
 
                             }
@@ -616,17 +615,17 @@ namespace Game
                             {
                                 if (wallBreakerleft - movement > 1 || (wallBreakerCool - movement <= 0 && wallBreakerleft == 0))
                                 {
-                                    direct += 3;
+                                    direct += 4;
                                 }
                                 else
                                 {
-                                    direct = direct - 5;
+                                    direct = direct - 6;
                                 }
 
                             }
                             else if (World.Board[Y + 1][X] == (ECell)2)//blue wall
                             {
-                                direct += 3;
+                                direct -= 4;
 
                             }
 
@@ -636,7 +635,7 @@ namespace Game
                         {
                             if (World.Board[Y][X - 1] == (ECell)0)//empty
                             {
-                                direct -= 4;
+                                direct += 5;
 
 
                             }
@@ -648,7 +647,7 @@ namespace Game
                                 }
                                 else
                                 {
-                                    direct = direct - 5;
+                                    direct = direct - 6;
                                 }
 
                             }
@@ -663,7 +662,7 @@ namespace Game
                         {
                             if (World.Board[Y][X + 1] == (ECell)0)//empty
                             {
-                                direct += 4;
+                                direct += 5;
 
 
                             }
@@ -671,17 +670,17 @@ namespace Game
                             {
                                 if (wallBreakerleft - movement > 1 || (wallBreakerCool - movement <= 0 && wallBreakerleft == 0))
                                 {
-                                    direct += 4;
+                                    direct += 5;
                                 }
                                 else
                                 {
-                                    direct = direct - 5;
+                                    direct = direct - 6;
                                 }
 
                             }
                             else if (World.Board[Y][X + 1] == (ECell)2)//blue wall
                             {
-                                direct -= 3;
+                                direct -= 4;
 
                             }
 
@@ -694,7 +693,7 @@ namespace Game
                         {
                             if (World.Board[Y + 1][X] == (ECell)0)//empty
                             {
-                                direct += 4;
+                                direct += 5;
 
 
                             }
@@ -706,13 +705,13 @@ namespace Game
                                 }
                                 else
                                 {
-                                    direct = direct - 5;
+                                    direct = direct - 6;
                                 }
 
                             }
                             else if (World.Board[Y + 1][X] == (ECell)2)//blue wall
                             {
-                                direct -= 3;
+                                direct -= 4;
 
                             }
 
@@ -722,7 +721,7 @@ namespace Game
                         {
                             if (World.Board[Y][X - 1] == (ECell)0)//empty
                             {
-                                direct += 4;
+                                direct += 5;
 
 
                             }
@@ -734,13 +733,13 @@ namespace Game
                                 }
                                 else
                                 {
-                                    direct = direct - 5;
+                                    direct = direct -6;
                                 }
 
                             }
                             else if (World.Board[Y][X - 1] == (ECell)2)//blue wall
                             {
-                                direct -= 3;
+                                direct -= 4;
 
                             }
                         }
@@ -749,7 +748,7 @@ namespace Game
                         {
                             if (World.Board[Y - 1][X] == (ECell)0)//empty
                             {
-                                direct += 4;
+                                direct += 5;
 
 
                             }
@@ -761,13 +760,13 @@ namespace Game
                                 }
                                 else
                                 {
-                                    direct = direct - 5;
+                                    direct = direct - 7;
                                 }
 
                             }
                             else if (World.Board[Y - 1][X] == (ECell)2)//blue wall
                             {
-                                direct -= 3;
+                                direct -= 4;
 
                             }
 
@@ -864,36 +863,36 @@ namespace Game
             Console.Write("%%" + Enum.GetName(typeof(EDirection), World.Agents[this.MySide].Direction) + "%% \n");
             if (Enum.GetName(typeof(ECell), this.World.Board[myAgentY][myAgentX - 1]) == "AreaWall")
             {
-                direct[3] = -9999999999999;
+                direct[3] = -99999999;
             }
             if (Enum.GetName(typeof(ECell), this.World.Board[myAgentY][myAgentX + 1]) == "AreaWall")
             {
-                direct[1] = -9999999999999;
+                direct[1] = -99999999;
             }
             if (Enum.GetName(typeof(ECell), this.World.Board[myAgentY - 1][myAgentX]) == "AreaWall")
             {
-                direct[0] = -9999999999999;
+                direct[0] = -99999999;
             }
             if (Enum.GetName(typeof(ECell), this.World.Board[myAgentY + 1][myAgentX]) == "AreaWall")
             {
-                direct[2] = -9999999999999;
+                direct[2] = -99999999;
             }
             //NOT going backward;
             if (World.Agents[this.MySide].Direction == (EDirection)0)
             {
-                direct[2] = -9999999999999;
+                direct[2] = -999999999;
             }
             if (World.Agents[this.MySide].Direction == (EDirection)1)
             {
-                direct[3] = -9999999999999;
+                direct[3] = -999999999;
             }
             if (World.Agents[this.MySide].Direction == (EDirection)2)
             {
-                direct[0] = -9999999999999;
+                direct[0] = -999999999;
             }
             if (World.Agents[this.MySide].Direction == (EDirection)3)
             {
-                direct[1] = -9999999999999;
+                direct[1] = -999999999;
             }
             int movement = 0;
 
@@ -914,7 +913,7 @@ namespace Game
                 help = 0;
                 if (World.Board[myAgentY][myAgentX + 1] != (ECell)1)//to not scan areawall
                     way(ref help, movement, (EDirection)1, myAgentX + 1, myAgentY);
-                direct[0] += help;
+                direct[1] += help;
                 help = 0;
             }
             else if (World.Agents[this.MySide].Direction == (EDirection)1)//right direction
@@ -938,7 +937,7 @@ namespace Game
                 if (World.Board[myAgentY][myAgentX - 1] != (ECell)1)//to not scan areawall
                     way(ref help, movement, (EDirection)3, myAgentX - 1, myAgentY);
                 direct[3] *= help;
-                help = 1;
+                help = 0;
                 if (World.Board[myAgentY + 1][myAgentX] != (ECell)1)
                     way(ref help, movement, (EDirection)2, myAgentX, myAgentY + 1);
                 direct[2] += help;
@@ -969,9 +968,10 @@ namespace Game
                 if (World.Agents[this.MySide].Direction != EDirection.Left)
                 {
                     direct[3]++;
+                    direct[3] += 20;
                 }
 
-                direct[3] += 15;
+                
 
 
             }
@@ -981,9 +981,10 @@ namespace Game
                 if (World.Agents[this.MySide].Direction != EDirection.Right)
                 {
                     direct[1]++;
+                    direct[1] += 20;
                 }
 
-                direct[1] += 15;
+                
 
             }
 
@@ -993,9 +994,10 @@ namespace Game
                 if (World.Agents[this.MySide].Direction != EDirection.Up)
                 {
                     direct[0]++;
+                    direct[0] += 20;
                 }
 
-                direct[0] += 15;
+                
             }
 
 
@@ -1005,20 +1007,15 @@ namespace Game
                 if (World.Agents[this.MySide].Direction != EDirection.Down)
                 {
                     direct[2]++;
+                    direct[2] += 20;
                 }
 
-                direct[2] += 15;
+                
             }
 
 
             path = 0;
-            for (int i = 0; i < 4; ++i)
-            {
-                if (direct[i] < 0)
-                {
-                    direct[i] = 9999999999;
-                }
-            }
+            
             Max a = new Max(direct, ref path);
             if (path == -1)//for the case of four zero 
             {
